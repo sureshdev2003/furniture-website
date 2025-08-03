@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DinnigRoom</title>
+</head>
+<style>
+  header {
+            background-color: #034912;
+            color: white;
+            padding: 20px 40px;
+            display: flex;
+            font-size: 40px;
+            justify-content: space-between;
+            align-items: center;
+        }
+    .product-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding: 20px;
+    }
+
+    .image-section {
+      width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 15px;
+    }
+
+    .product-image {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+
+    .product-title {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+
+    .product-rating,
+    .product-price,
+    .product-features {
+      margin: 5px 0;
+    }
+
+    .original-price {
+      text-decoration: line-through;
+      margin-left: 10px;
+      color: gray;
+    }
+
+    .discount {
+      color: green;
+      margin-left: 10px;
+    }
+
+    .buy-btn,
+    .cart-btn {
+      margin: 5px 5px 0 0;
+      padding: 8px 16px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .cart-btn {
+      background-color: #28a745;
+    }
+    #cart-page, #checkout-page {
+            display: none;
+            max-width: 600px;
+            margin: 30px auto;
+            background: #fff;
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,.1);
+        }
+        #cart-list {
+            list-style: none;
+            padding: 0;
+        }
+        #cart-list li {
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 8px;
+        }
+        .cart-actions button {
+            background: #d9534f;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 4px 10px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .back-btn {
+            background: #034912;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 7px 16px;
+            cursor: pointer;
+            margin-bottom: 18px;
+        }
+        #checkout-form input {
+            margin: 10px 0;
+            padding: 7px;
+            width: 98%;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        #checkout-form label {
+            font-weight: bold;
+            display: block;
+        }
+        #checkout-form button {
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 17px;
+            margin-top: 15px;
+        }
+        #success-message {
+            color: #034912;
+            font-size: 20px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        @media (max-width: 700px) {
+            .product-container { flex-direction: column; gap: 12px; }
+            .image-section { width: 98%; }
+        }
+  </style>
+<body>
+    <header class="navbar">
+    <div class="logo">GREENWOOD FURNITURES</div>
+    <button class="cart-btn" id="open-cart-btn" style="font-size:18px;padding:8px 15px;">🛒 View Cart</button>
+  </header>
+  <body>
+   <main class="product-container" id="main-products">
+    <div class="image-section">
+      <img src="Buy-CompDinnig1.jpg"Product Image" class="product-image"/>
+    <div class="details-section">
+      <h1 class="product-title">five seater L-shape Sofa</h1>
+      <p class="product-rating">⭐ 4.3 | 14,000 Ratings</p>
+      <p class="product-price">₹21,000<span class="original-price">₹30,000</span> <span class="discount">18% off</span></p>
+
+      <ul class="product-features">
+        <li>Attractrs your vistors </li>
+        <li>Specially sweden make table</li>
+      </ul>
+      <button class="buy-btn">Buy Now</button>
+      <button class="cart-btn">Add to Cart</button>
+      <h4>Review</h4>
+      <h4>Polyester fabric corner sofa (~₹30,999).<br>
+Spacious with functional storage; hides well in L‑shapes for cozy family spaces</h4>
+    </div>  
+    </div>
+     <div class="image-section">
+      <img src="Buy-CompDinnig2.jpg" alt="Product Image" class="product-image"/>
+    <div class="details-section">
+      <h1 class="product-title">five seater L-shape Sofa</h1>
+      <p class="product-rating">⭐ 4.3 | 14,000 Ratings</p>
+      <p class="product-price">₹21,000<span class="original-price">₹30,000</span> <span class="discount">18% off</span></p>
+
+      <ul class="product-features">
+        <li>Attractrs your vistors </li>
+        <li>Specially sweden make table</li>
+      </ul>
+      <button class="buy-btn">Buy Now</button>
+      <button class="cart-btn">Add to Cart</button>
+      <h4>Review</h4>
+      <h4>Polyester fabric corner sofa (~₹30,999).<br>
+Spacious with functional storage; hides well in L‑shapes for cozy family spaces</h4>
+    </div>  
+    </div> <div class="image-section">
+      <img src="Buy-CompDinnig3.webp" alt="Product Image" class="product-image"/>
+    <div class="details-section">
+      <h1 class="product-title">five seater L-shape Sofa</h1>
+      <p class="product-rating">⭐ 4.3 | 14,000 Ratings</p>
+      <p class="product-price">₹21,000<span class="original-price">₹30,000</span> <span class="discount">18% off</span></p>
+
+      <ul class="product-features">
+        <li>Attractrs your vistors </li>
+        <li>Specially sweden make table</li>
+      </ul>
+      <button class="buy-btn">Buy Now</button>
+      <button class="cart-btn">Add to Cart</button>
+      <h4>Review</h4>
+      <h4>Polyester fabric corner sofa (~₹30,999).<br>
+Spacious with functional storage; hides well in L‑shapes for cozy family spaces</h4>
+    </div>  
+    </div> <div class="image-section">
+      <img src="Buy-CompDinnig4.webp" alt="Product Image" class="product-image"/>
+    <div class="details-section">
+      <h1 class="product-title">five seater L-shape Sofa</h1>
+      <p class="product-rating">⭐ 4.3 | 14,000 Ratings</p>
+      <p class="product-price">₹21,000<span class="original-price">₹30,000</span> <span class="discount">18% off</span></p>
+
+      <ul class="product-features">
+        <li>Attractrs your vistors </li>
+        <li>Specially sweden make table</li>
+      </ul>
+      <button class="buy-btn">Buy Now</button>
+      <button class="cart-btn">Add to Cart</button>
+      <h4>Review</h4>
+      <h4>Polyester fabric corner sofa (~₹30,999).<br>
+Spacious with functional storage; hides well in L‑shapes for cozy family spaces</h4>
+    </div>  
+    </div> <div class="image-section">
+      <img src="Buy-CompDinnig5.jpg" alt="Product Image" class="product-image"/>
+    <div class="details-section">
+      <h1 class="product-title">five seater L-shape Sofa</h1>
+      <p class="product-rating">⭐ 4.3 | 14,000 Ratings</p>
+      <p class="product-price">₹21,000<span class="original-price">₹30,000</span> <span class="discount">18% off</span></p>
+
+      <ul class="product-features">
+        <li>Attractrs your vistors </li>
+        <li>Specially sweden make table</li>
+      </ul>
+      <button class="buy-btn">Buy Now</button>
+      <button class="cart-btn">Add to Cart</button>
+      <h4>Review</h4>
+      <h4>Polyester fabric corner sofa (~₹30,999).<br>
+Spacious with functional storage; hides well in L‑shapes for cozy family spaces</h4>
+    </div>  
+    </div> <div class="image-section">
+      <img src="Buy-CompDinnig6.avif"Product Image" class="product-image"/>
+    <div class="details-section">
+      <h1 class="product-title">five seater L-shape Sofa</h1>
+      <p class="product-rating">⭐ 4.3 | 14,000 Ratings</p>
+      <p class="product-price">₹21,000<span class="original-price">₹30,000</span> <span class="discount">18% off</span></p>
+
+      <ul class="product-features">
+        <li>Attractrs your vistors </li>
+        <li>Specially sweden make table</li>
+      </ul>
+      <button class="buy-btn">Buy Now</button>
+      <button class="cart-btn">Add to Cart</button>
+      <h4>Review</h4>
+      <h4>Polyester fabric corner sofa (~₹30,999).<br>
+Spacious with functional storage; hides well in L‑shapes for cozy family spaces</h4>
+    </div>  
+    </div> <div class="image-section">
+      <img src="Buy-CompDinnig7.webp" alt="Product Image" class="product-image"/>
+    <div class="details-section">
+      <h1 class="product-title">five seater L-shape Sofa</h1>
+      <p class="product-rating">⭐ 4.3 | 14,000 Ratings</p>
+      <p class="product-price">₹21,000<span class="original-price">₹30,000</span> <span class="discount">18% off</span></p>
+
+      <ul class="product-features">
+        <li>Attractrs your vistors </li>
+        <li>Specially sweden make table</li>
+      </ul>
+      <button class="buy-btn">Buy Now</button>
+      <button class="cart-btn">Add to Cart</button>
+      <h4>Review</h4>
+      <h4>Polyester fabric corner sofa (~₹30,999).<br>
+Spacious with functional storage; hides well in L‑shapes for cozy family spaces</h4>
+    </div>  
+    </div> <div class="image-section">
+      <img src="Buy-CompDinnig8.webp" alt="Product Image" class="product-image"/>
+    <div class="details-section">
+      <h1 class="product-title">five seater L-shape Sofa</h1>
+      <p class="product-rating">⭐ 4.3 | 14,000 Ratings</p>
+      <p class="product-price">₹21,000<span class="original-price">₹30,000</span> <span class="discount">18% off</span></p>
+
+      <ul class="product-features">
+        <li>Attractrs your vistors </li>
+        <li>Specially sweden make table</li>
+      </ul>
+      <button class="buy-btn">Buy Now</button>
+      <button class="cart-btn">Add to Cart</button>
+      <h4>Review</h4>
+      <h4>Polyester fabric corner sofa (~₹30,999).<br>
+Spacious with functional storage; hides well in L‑shapes for cozy family spaces</h4>
+    </div>  
+    </div> <div class="image-section">
+      <img src="Buy-CompDinnig9.webp" alt="Product Image" class="product-image"/>
+    <div class="details-section">
+      <h1 class="product-title">five seater L-shape Sofa</h1>
+      <p class="product-rating">⭐ 4.3 | 14,000 Ratings</p>
+      <p class="product-price">₹21,000<span class="original-price">₹30,000</span> <span class="discount">18% off</span></p>
+
+      <ul class="product-features">
+        <li>Attractrs your vistors </li>
+        <li>Specially sweden make table</li>
+      </ul>
+      <button class="buy-btn">Buy Now</button>
+      <button class="cart-btn">Add to Cart</button>
+      <h4>Review</h4>
+      <h4>Polyester fabric corner sofa (~₹30,999).<br>
+Spacious with functional storage; hides well in L‑shapes for cozy family spaces</h4>
+    </div>  
+    </div> <div class="image-section">
+      <img src="Buy-CompDinnig10.avif" alt="Product Image" class="product-image"/>
+    <div class="details-section">
+      <h1 class="product-title">five seater L-shape Sofa</h1>
+      <p class="product-rating">⭐ 4.3 | 14,000 Ratings</p>
+      <p class="product-price">₹21,000<span class="original-price">₹30,000</span> <span class="discount">18% off</span></p>
+
+      <ul class="product-features">
+        <li>Attractrs your vistors </li>
+        <li>Specially sweden make table</li>
+      </ul>
+      <button class="buy-btn">Buy Now</button>
+      <button class="cart-btn">Add to Cart</button>
+      <h4>Review</h4>
+      <h4>Polyester fabric corner sofa (~₹30,999).<br>
+Spacious with functional storage; hides well in L‑shapes for cozy family spaces</h4>
+    </div>  
+    </div>
+    </main>
+
+<!-- Cart Page -->
+<div id="cart-page">
+    <button class="back-btn" id="back-to-shop">← Back to Shop</button>
+    <h2>Your Cart</h2>
+    <ul id="cart-list"></ul>
+    <div id="cart-total" style="font-weight:bold; margin-top:12px;"></div>
+    <button class="buy-btn" id="checkout-btn">Checkout</button>
+</div>
+<!-- Checkout Page -->
+<div id="checkout-page">
+    <button class="back-btn" id="back-to-cart">← Back to Cart</button>
+    <h2>Checkout</h2>
+    <form id="checkout-form">
+        <label>Name:</label>
+        <input type="text" required name="name" />
+        <label>Address:</label>
+        <input type="text" required name="address" />
+        <label>Phone:</label>
+        <input type="tel" required name="phone" />
+        <button type="submit">Place Order</button>
+    </form>
+    <div id="success-message"></div>
+</div>
+
+<script>
+    // Cart logic
+    let cart = [];
+
+    // Add to cart function
+    function addToCart(title, price, img) {
+        const existing = cart.find(item => item.title === title);
+        if (existing) {
+            existing.qty += 1;
+        } else {
+            cart.push({ title, price: parseInt(price, 10), img, qty: 1 });
+        }
+        alert(title + " added to cart!");
+    }
+
+    // Buy now function
+    function buyNow(title, price, img) {
+        cart = [{ title, price: parseInt(price, 10), img, qty: 1 }];
+        showCart();
+        setTimeout(() => {
+            showCheckout();
+        }, 500);
+    }
+
+    // Update cart page
+    function renderCart() {
+        const cartList = document.getElementById('cart-list');
+        cartList.innerHTML = '';
+        let total = 0;
+        if (cart.length === 0) {
+            cartList.innerHTML = '<li>Your cart is empty.</li>';
+            document.getElementById('cart-total').textContent = '';
+            document.getElementById('checkout-btn').style.display = 'none';
+            return;
+        }
+        cart.forEach((item, idx) => {
+            total += item.price * item.qty;
+            const li = document.createElement('li');
+            li.innerHTML = `
+                <div>
+                    <img src="${item.img}" alt="${item.title}" style="height:40px;width:40px;border-radius:4px;vertical-align:middle;margin-right:12px;">
+                    <span>${item.title}</span> x${item.qty} - ₹${item.price * item.qty}
+                </div>
+                <div class="cart-actions">
+                    <button onclick="removeItem(${idx})">Remove</button>
+                </div>
+            `;
+            cartList.appendChild(li);
+        });
+        document.getElementById('cart-total').textContent = "Total: ₹" + total;
+        document.getElementById('checkout-btn').style.display = 'inline-block';
+    }
+
+    function removeItem(idx) {
+        cart.splice(idx, 1);
+        renderCart();
+    }
+
+    // Show/Hide pages
+    function showCart() {
+        document.getElementById('main-products').style.display = 'none';
+        document.getElementById('cart-page').style.display = 'block';
+        document.getElementById('checkout-page').style.display = 'none';
+        renderCart();
+    }
+    function showShop() {
+        document.getElementById('main-products').style.display = 'flex';
+        document.getElementById('cart-page').style.display = 'none';
+        document.getElementById('checkout-page').style.display = 'none';
+    }
+    function showCheckout() {
+        document.getElementById('main-products').style.display = 'none';
+        document.getElementById('cart-page').style.display = 'none';
+        document.getElementById('checkout-page').style.display = 'block';
+        document.getElementById('success-message').textContent = '';
+        document.getElementById('checkout-form').reset();
+    }
+
+    // Event Listeners for buttons
+    document.querySelectorAll('.cart-btn').forEach(btn => {
+        btn.onclick = function() {
+            addToCart(
+                btn.getAttribute('data-title'),
+                btn.getAttribute('data-price'),
+                btn.getAttribute('data-img')
+            );
+        }
+    });
+
+    document.querySelectorAll('.buy-btn').forEach(btn => {
+        btn.onclick = function() {
+            buyNow(
+                btn.getAttribute('data-title'),
+                btn.getAttribute('data-price'),
+                btn.getAttribute('data-img')
+            );
+        }
+    });
+
+    document.getElementById('open-cart-btn').onclick = showCart;
+    document.getElementById('back-to-shop').onclick = showShop;
+    document.getElementById('checkout-btn').onclick = showCheckout;
+    document.getElementById('back-to-cart').onclick = showCart;
+
+    // Checkout form
+    document.getElementById('checkout-form').onsubmit = function(e) {
+        e.preventDefault();
+        document.getElementById('success-message').textContent =
+            "Thank you for your order! We'll contact you soon.";
+        cart = [];
+        setTimeout(showShop, 2500);
+    };
+</script>
+</body>
+</html>

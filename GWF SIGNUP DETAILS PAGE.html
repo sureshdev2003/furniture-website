@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Details Page</title>
+  <style>
+    body {
+            background-image: url(image/GREEN\ LIVING.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .form-container {
+      background: #fff;
+      max-width: 420px;
+      margin: 48px auto;
+      padding: 30px 36px 24px 36px;
+      border-radius: 16px;
+      box-shadow: 0 6px 48px #409eff44;
+      border-top: 6px solid #409eff;
+      border-bottom: 2px solid #89f7fe;
+      transition: box-shadow 0.2s;
+      animation: slideIn 0.7s cubic-bezier(.17,.67,.83,.67);
+    }
+    @keyframes slideIn {
+      from {transform: translateY(40px); opacity: 0;}
+      to {transform: translateY(0); opacity: 1;}
+    }
+    .form-container:hover {
+      box-shadow: 0 10px 64px #409eff66;
+    }
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 28px;
+      color: #409eff;
+      letter-spacing: 1px;
+      font-size: 1.7rem;
+      font-weight: bold;
+      text-shadow: 1px 1px 0 #e7f3ff;
+    }
+    .form-group {
+      margin-bottom: 22px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 7px;
+      font-weight: 500;
+      color: #2d3a4d;
+      letter-spacing: 0.5px;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1.5px solid #c1eaff;
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-size: 15px;
+      background: #f6faff;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #409eff;
+      background: #e7f3ff;
+      box-shadow: 0 0 4px #66a6ff44;
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 52px;
+      max-height: 140px;
+    }
+    button {
+      width: 100%;
+      background: linear-gradient(90deg, #409eff 40%, #66a6ff 100%);
+      color: #fff;
+      border: none;
+      padding: 13px 0;
+      border-radius: 6px;
+      font-size: 17px;
+      font-weight: 500;
+      cursor: pointer;
+      margin-top: 8px;
+      letter-spacing: 1px;
+      box-shadow: 0 2px 12px #409eff33;
+      transition: background 0.2s, box-shadow 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    button:active {
+      background: linear-gradient(90deg, #66a6ff 30%, #409eff 100%);
+      box-shadow: 0 4px 24px #409eff55;
+    }
+    button:after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0; left: 0;
+      background: linear-gradient(45deg, #89f7fe44 20%, #409eff44 80%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      z-index: 0;
+    }
+    button:hover:after {
+      opacity: 1;
+    }
+    button:hover {
+      background: linear-gradient(90deg, #66a6ff 30%, #409eff 100%);
+      box-shadow: 0 4px 24px #409eff55;
+    }
+    @media (max-width: 500px) {
+      .form-container {
+        padding: 18px 8px 16px 8px;
+        max-width: 98vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Enter Your Details</h2>
+    <form id="detailsForm">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input id="name" name="name" type="text" required autocomplete="name">
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number:</label>
+        <input id="phone" name="phone" type="tel" required autocomplete="tel">
+      </div>
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" required autocomplete="street-address"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="pincode">Pincode:</label>
+        <input id="pincode" name="pincode" type="text" required autocomplete="postal-code">
+      </div>
+      <div class="form-group">
+        <label for="district">District:</label>
+        <input id="district" name="district" type="text" required>
+      </div>
+      <div class="form-group">
+        <label for="state">State:</label>
+        <input id="state" name="state" type="text" required autocomplete="address-level1">
+      </div>
+      <div class="form-group">
+        <label for="nearby">Nearby Location:</label>
+        <input id="nearby" name="nearby" type="text">
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input id="password" name="password" type="password">
+      </div>
+      <div class="form-group">
+        <label for="conform password">Conform Password:</label>
+        <input id="conform password" name="conform password" type="password">
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  <script>
+    document.getElementById('detailsForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      window.location.href = "GREENWOOD FURNITURES1.html";
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add to Cart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: Arial, sans-serif; background: #f5f5f5; margin: 0; padding: 0; }
+        .container { max-width: 600px; margin: 40px auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,.1); padding: 24px; }
+        h1 { text-align: center; color: #333; }
+        .product { display: flex; align-items: center; margin-bottom: 24px; }
+        .product img { width: 100px; height: 100px; object-fit: cover; margin-right: 24px; border-radius: 8px; }
+        .product-details { flex: 1; }
+        .product-title { font-size: 1.2em; margin: 0 0 8px 0; }
+        .product-price { color: #009688; font-weight: bold; margin-bottom: 8px; }
+        .quantity { margin-bottom: 8px; }
+        button { background: #009688; color: #fff; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; }
+        button:disabled { opacity: 0.5; }
+        .cart { margin-top: 32px; }
+        .cart h2 { margin-top: 0; }
+        .cart-list { list-style: none; padding: 0; margin: 0; }
+        .cart-list li { margin-bottom: 8px; }
+        .empty-cart { color: #888; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Add to Cart</h1>
+        <div class="product">
+            <img src="https://via.placeholder.com/100" alt="Product Image">
+            <div class="product-details">
+                <div class="product-title" id="product-title">Sample Product</div>
+                <div class="product-price" id="product-price">$19.99</div>
+                <div class="quantity">
+                    Quantity:
+                    <input type="number" id="quantity" value="1" min="1" style="width: 60px;">
+                </div>
+                <button id="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+        <div class="cart">
+            <h2>Your Cart</h2>
+            <ul class="cart-list" id="cart-list">
+                <li class="empty-cart">Your cart is empty.</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        const cart = [];
+        const addBtn = document.getElementById('add-to-cart');
+        const cartList = document.getElementById('cart-list');
+        const qtyInput = document.getElementById('quantity');
+
+        addBtn.onclick = function() {
+            const title = document.getElementById('product-title').textContent;
+            const price = parseFloat(document.getElementById('product-price').textContent.replace('$',''));
+            const qty = parseInt(qtyInput.value, 10);
+
+            // Add to cart array
+            const existing = cart.find(item => item.title === title);
+            if(existing){
+                existing.qty += qty;
+            } else {
+                cart.push({ title, price, qty });
+            }
+
+            renderCart();
+        };
+
+        function renderCart() {
+            cartList.innerHTML = '';
+            if(cart.length === 0){
+                const li = document.createElement('li');
+                li.textContent = 'Your cart is empty.';
+                li.className = 'empty-cart';
+                cartList.appendChild(li);
+                return;
+            }
+            cart.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = `${item.title} x${item.qty} - $${(item.price * item.qty).toFixed(2)}`;
+                cartList.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>

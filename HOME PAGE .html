@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> GREENWOODS FURNITUES</title>
+  <style>
+    body {
+      background-image: url(image/GREENWOODS.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .home-container {
+      background: rgba(255,255,255,0.97);
+      border-radius: 22px;
+      box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+      padding: 48px 36px;
+      max-width: 370px;
+      width: 100%;
+      text-align: center;
+      animation: fade-in 0.7s cubic-bezier(.41,.8,.62,1.17);
+    }
+    @keyframes fade-in {
+      from { opacity: 0; transform: translateY(-30px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    .home-logo {
+      font-size: 2.3rem;
+      font-weight: 700;
+      color: #008000;
+      margin-bottom: 18px;
+      letter-spacing: 1px;
+      text-shadow: 0 4px 24px #89f7fe66;
+    }
+    .home-desc {
+      color:#008000;
+      font-size: 1.09rem;
+      margin-bottom: 36px;
+    }
+    .home-actions {
+      display: center;
+      flex-direction:row;
+      colour:#008000;
+      gap: 18px;
+      margin-bottom: 10px;
+    }
+    .home-btn {
+      padding: 13px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      background: linear-gradient(90deg,#2186ea 0%, #66a6ff 100%);
+      color: #fff;
+      box-shadow: 0 2px 12px #89f7fe33;
+      letter-spacing: 0.5px;
+    }
+    .home-btn:hover {
+      background: linear-gradient(90deg,#008000 0%, #008000 100%);
+      transform: scale(1.04);
+    }
+    .home-links {
+      margin-top: 20px;
+      font-size: 0.98rem;
+      color: #008000;
+    }
+    .home-links a {
+      color: #008000;
+      text-decoration: none;
+      margin: 0 12px;
+      opacity: 0.8;
+      transition: opacity 0.22s;
+    }
+    .home-links a:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="home-container">
+    <div class="home-logo">GREENWOODS FURNITURES</div>
+    <div class="home-desc">
+      Welcome to GREENWOODS FURNITURES<br>
+      GREEN WOODS GREEN LIFE<br>
+      Please login or sign up to continue.
+    </div>
+    <div class="home-actions">
+      <a href="/GWF  SIGNIN.html"><button class="home-btn">Signin</button></a>
+      <a href="/GWF SIGNUP DETAILS PAGE.html"><button class="home-btn">Signup</button></a>
+    </div>
+    <div class="home-links">
+      <a href="/GWF ABOUT.html">About Us</a> |
+      <a href="/GWF CONTACT.html">Contact</a>
+    </div>
+  </div>
+</body>
+</html>

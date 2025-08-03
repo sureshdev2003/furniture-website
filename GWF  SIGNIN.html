@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GREENWOODS SIGNIN</title>
+  <style>
+    body {
+      background-image: url(image/RED\ SOFA\ LOGIN.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .signin-container {
+      width: 350px;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 18px;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+      padding: 40px 30px;
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      position: relative;
+      animation: slide-down 0.8s cubic-bezier(.41, .8, .62, 1.17);
+    }
+
+    @keyframes slide-down {
+      from {
+        transform: translateY(-40px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    h2 {
+      margin-bottom: 24px;
+      text-align: center;
+      color: #008000;
+      font-weight: 700;
+      letter-spacing: 1px;
+      font-size: 2rem;
+      text-shadow: 0 2px 12px #5eef3877;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 15px;
+      color: #008000;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px;
+      font-size: 15px;
+      border: 1.5px solid #8ec5fc;
+      border-radius: 6px;
+      box-sizing: border-box;
+      outline: none;
+      background: #edfff3;
+      transition: border-color 0.22s, box-shadow 0.22s;
+    }
+
+    .form-group input:focus {
+      border-color: #5eef38;
+      box-shadow: 0 0 0 2px #5eef3844;
+    }
+
+    .signin-btn {
+      width: 100%;
+      padding: 13px;
+      color: #fff;
+      background: linear-gradient(90deg, #008000 0%, #5eef38 100%);
+      border: none;
+      border-radius: 7px;
+      font-size: 17px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 12px;
+      box-shadow: 0 2px 8px #5eef38;
+      letter-spacing: 0.7px;
+      transition: background 0.23s, transform 0.18s;
+    }
+
+    .signin-btn:hover {
+      background: linear-gradient(90deg, #49a09d 0%, #5eef38 100%);
+      transform: translateY(-1px) scale(1.03);
+    }
+
+    .signin-links {
+      text-align: center;
+      margin-top: 22px;
+    }
+
+    .signin-links a {
+      color: #008000;
+      text-decoration: none;
+      margin: 0 8px;
+      font-size: 15px;
+      font-weight: 500;
+      opacity: 0.82;
+      transition: color 0.2s, opacity 0.2s;
+    }
+
+    .signin-links a:hover {
+      color: #5eef38;
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+    .btn-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .sign-up {
+      background-color: #28a745;
+      color: white;
+    }
+
+    .sign-in {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="signin-container">
+    <h2>SIGN IN</h2>
+
+    <form onsubmit="handleSignIn(event)">
+      
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required autocomplete="email">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required autocomplete="current-password">
+      </div>
+      <button type="submit" class="signin-btn">Sign In</button>
+    </form>
+    <div class="signin-links">
+      <a href="/forgot-password">Forgot password?</a>
+    </div>
+    <div class="footer">
+      <br>
+      <p>Don't have an account? <a href="GWF SIGNUP DETAILS PAGE.html">Sign up</a></p>
+      
+    </div>
+  </div>
+
+  <!-- <script>
+    function signUp() {
+      alert("Redirecting to Sign-Up page...");
+      window.location.href = "/signup.html"; // Update with your actual signup page path
+    }
+
+    function signIn() {
+      alert("You clicked the secondary Sign In button.");
+      // This button is extra, not the one that submits the form
+    }
+
+    function handleSignIn(event) {
+      event.preventDefault(); // Prevent form from submitting normally
+      // Simulate successful sign-in and redirect
+      window.location.href = "GREENWOOD FURNITURES1.html";
+    }
+  </script> -->
+  <script>
+  function handleSignIn(event) {
+    event.preventDefault(); // prevent form from submitting
+    // Add validation here if needed
+    window.location.href = "GREENWOOD-FURNITURES1.html"; // redirect
+  }
+</script>
+</body>
+
+</html>
