@@ -129,7 +129,7 @@
 <body>
   <div class="form-container">
     <h2>Enter Your Details</h2>
-    <form id="detailsForm">
+    <form id="detailsForm" action="sign up.php" method="POST">
       <div class="form-group">
         <label for="name">Name:</label>
         <input id="name" name="name" type="text" required autocomplete="name">
@@ -160,20 +160,18 @@
       </div>
       <div class="form-group">
         <label for="password">Password:</label>
-        <input id="password" name="password" type="password">
+        <input id="password" name="password" type="password" required minlength="6">
       </div>
       <div class="form-group">
-        <label for="conform password">Conform Password:</label>
-        <input id="conform password" name="conform password" type="password">
+        <label for="confirm_password">Confirm Password:</label>
+        <input id="confirm_password" name="confirm_password" type="password" required minlength="6">
       </div>
       <button type="submit">Submit</button>
     </form>
   </div>
   <script>
-    document.getElementById('detailsForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      window.location.href = "GREENWOOD FURNITURES1.html";
-    });
+    // Form validation can be added here if needed
+    // The form now submits to sign up.php for processing
   </script>
 </body>
 </html>

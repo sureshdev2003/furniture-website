@@ -166,7 +166,7 @@
   <div class="signin-container">
     <h2>SIGN IN</h2>
 
-    <form onsubmit="handleSignIn(event)">
+    <form action="login.php" method="POST">
       
       <div class="form-group">
         <label for="email">Email Address</label>
@@ -206,11 +206,8 @@
     }
   </script> -->
   <script>
-  function handleSignIn(event) {
-    event.preventDefault(); // prevent form from submitting
-    // Add validation here if needed
-    window.location.href = "GREENWOOD-FURNITURES1.html"; // redirect
-  }
+  // Form validation can be added here if needed
+  // The form now submits to login.php for processing
 </script>
 </body>
 
